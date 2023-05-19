@@ -7,7 +7,7 @@ const info = document.querySelector('.info')
 
 const showError = () => {
 	if (price.value == '' || people.value == '' || tip.value == 0) {
-		error.textContent = 'Uzupełnij wszytkie pola!'
+		error.textContent = 'Fill in all fields!'
 		error.style.color = 'red'
 		info.textContent = ''
 	} else {
@@ -21,7 +21,8 @@ const calculateBill = () => {
 	const newPeople = parseInt(people.value)
 	const newTip = parseFloat(tip.value)
 	const sum = (newPrice + newPrice * newTip) / newPeople
-	info.textContent = `Składka po ${sum.toFixed(2)} zł`
+	info.textContent = `Amount per person ${sum.toFixed(2)}€`
+	info.style.color = 'rgb(199, 129, 0)'
 }
 
 calculateBtn.addEventListener('click', showError)

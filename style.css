@@ -43,11 +43,13 @@ body {
 .title {
 	font-size: 3rem;
 	text-transform: uppercase;
+	color: #fff;
 }
 
 .text {
 	font-size: 1.6rem;
 	padding-top: 0.5em;
+	color: #fff;
 }
 
 .down {
@@ -82,7 +84,7 @@ select {
 }
 
 .calculate:hover {
-	background-color: rgb(210, 154, 51);
+	background-color: rgb(210, 142, 14);
 }
 
 .info,
@@ -93,7 +95,7 @@ select {
 
 .icon {
 	position: absolute;
-	width: 100px;
+	width: 20%;
 	opacity: 0.2;
 	z-index: -1;
 }
@@ -101,19 +103,112 @@ select {
 .icon-burger {
 	top: 5%;
 	left: 5%;
+	animation: rotate 10s linear infinite, burgerAnimation 10s linear infinite;
 }
 
 .icon-pizza {
 	top: 10%;
-	right: 5%;
+	left: 95%;
+	animation: secondRotate 10s linear infinite,
+		pizzaAnimation 10s linear infinite;
 }
 
 .icon-fish {
 	top: 90%;
-	right: 5%;
+	left: 80%;
+	animation: rotate 10s linear infinite, fishAnimation 10s linear infinite;
 }
 
 .icon-wine {
 	top: 80%;
-	right: 75%;
+	left: 15%;
+	animation: secondRotate 10s linear infinite, wineAnimation 10s linear infinite;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes secondRotate {
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+@keyframes burgerAnimation {
+	25% {
+		top: 15%;
+		left: 80%;
+	}
+	50% {
+		top: 85%;
+		left: 45%;
+	}
+	75% {
+		top: 50%;
+		left: 10%;
+	}
+	100% {
+		top: 5%;
+		left: 5%;
+	}
+}
+
+@keyframes pizzaAnimation {
+	25% {
+		top: 75%;
+		left: 70%;
+	}
+	50% {
+		top: 65%;
+		left: 25%;
+	}
+	75% {
+		top: 68%;
+		left: 55%;
+	}
+	100% {
+		top: 10%;
+		left: 95%;
+	}
+}
+
+@keyframes wineAnimation {
+	25% {
+		top: 35%;
+		left: 80%;
+	}
+	50% {
+		top: 15%;
+		left: 45%;
+	}
+	75% {
+		top: 88%;
+		left: 65%;
+	}
+	100% {
+		top: 80%;
+		left: 15%;
+	}
+}
+
+@keyframes fishAnimation {
+	25% {
+		top: 15%;
+		left: 50%;
+	}
+	50% {
+		top: 45%;
+		left: 5%;
+	}
+	75% {
+		top: 88%;
+		left: 3 infinite0%;
+	}
+	100% {
+		top: 90%;
+		left: 80%;
+	}
 }
